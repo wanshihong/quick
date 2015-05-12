@@ -1,0 +1,9 @@
+[ 2015-05-08T17:54:57+08:00 ] 127.0.0.1 /quick_admin/index.php/Admin/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载控制器:User
+

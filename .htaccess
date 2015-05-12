@@ -1,0 +1,23 @@
+#ThinkPHP 的重新规则
+#<IfModule mod_rewrite.c>
+#  Options +FollowSymlinks
+#  RewriteEngine On
+#
+#  RewriteCond %{REQUEST_FILENAME} !-d
+#  RewriteCond %{REQUEST_FILENAME} !-f
+#  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+#</IfModule>
+
+
+#CGI 运行的重新规则
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+   #  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+   # PHP  fastcgi 运行模式的 URL 重写
+   RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+</IfModule>

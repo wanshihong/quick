@@ -1,0 +1,76 @@
+<div class="modal fade" id="addField" tabindex="-1" role="dialog" aria-labelledby="addFileLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addFileLabel">设置 <code>{{table.fields[fieldIndex].name}}</code>的字段详情</h4>
+            </div>
+            <form name="addFile" class="form-horizontal" novalidate>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">索引</label>
+                        <div class="col-xs-10">
+                            <select ng-model="table.fields[fieldIndex].index"
+                                    ng-options="fiedlindex  for fiedlindex in fiedlindexs" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">字段类型</label>
+                        <div class="col-xs-10">
+                            <select ng-model="table.fields[fieldIndex].type"
+                                    ng-options="type.name  group by type.shade for type in fieldtypes"
+                                    class="form-control">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">字段长度</label>
+                        <div class="col-xs-10">
+                            <input type="number" ng-model="table.fields[fieldIndex].length" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">默认值</label>
+                        <div class="col-xs-10">
+                            <input type="text" ng-model="table.fields[fieldIndex].default" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">属性</label>
+                        <div class="col-xs-10">
+                            <select ng-model="table.fields[fieldIndex].attr"
+                                    ng-options="attr  for attr in fiedlattrs" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">字段注释</label>
+                        <div class="col-xs-10">
+                            <input type="text" ng-model="table.fields[fieldIndex].commit" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"></label>
+                        <div class="col-xs-10">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="table.fields[fieldIndex].null" value="true"> 空值
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="table.fields[fieldIndex].ai" value="true"> 自增长
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

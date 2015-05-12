@@ -1,0 +1,61 @@
+<div class="modal fade" id="relation" tabindex="-1" role="dialog" aria-labelledby="relationLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="relationLabel">设置 <code>{{ table.fields[relationIndex].name }}</code>的关联信息
+                </h4>
+            </div>
+            <form name="relation" class="form-horizontal" novalidate>
+                <div class="modal-body">
+                    <table class="table table-bordered table-responsive table-hover table-striped">
+                        <tr>
+                            <th>关联表</th>
+                            <th>关联字段</th>
+                            <th>关联显示字段</th>
+                            <th>关联关系</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select ng-model="table.fields[relationIndex].mapping.table"
+                                        class="form-control mapping"
+                                        ng-options="table for table in dbTables"
+                                        ng-change="tableChange()">
+                                </select>
+                            </td>
+                            <td>
+                                <select ng-model="table.fields[relationIndex].mapping.field"
+                                        class="form-control mapping"
+                                        ng-options="table for table in tableField">
+                                </select>
+                            </td>
+                            <td>
+                                <select ng-model="table.fields[relationIndex].mapping.view"
+                                        class="form-control mapping"
+                                        ng-options="table for table in tableField">
+                                </select>
+                            </td>
+                            <td>
+                                <select ng-model="table.fields[relationIndex].mapping.mapping" class="form-control"
+                                        ng-options="mapping for mapping in mappings">
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="well">
+                        关联关系说明：
+                        <a target="_blank" href="http://document.thinkphp.cn/manual_3_2.html#relation_model">
+                            http://document.thinkphp.cn/manual_3_2.html#relation_model
+                        </a>
+                    </div>
+                    <code>注：关联字段、关联关系同时存在才会创建相关代码。关联显示用于添加时候，下拉框选择显示！</code>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
