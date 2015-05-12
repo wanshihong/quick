@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>快速构建后台</title>
-    <link href="/quick_admin/Public/Build/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/quick/Public/Build/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -24,19 +24,19 @@
         <div class="col-xs-10">
             <div class="row form-horizontal">
                 <div class="col-xs-4 form-group">
-                    <label class="col-xs-3 control-label">表名称:</label>
+                    <label class="col-xs-3 control-label">表名:</label>
                     <div class="col-xs-9">
                         <input type="text" class="form-control" ng-model="table.name" placeholder="数据库名称"/>
                     </div>
                 </div>
                 <div class="col-xs-4 form-group">
-                    <label class="col-xs-3 control-label">表名称:</label>
+                    <label class="col-xs-3 control-label">视图:</label>
                     <div class="col-xs-9">
                         <input type="text" class="form-control" ng-model="table.commit" placeholder="视图显示名称"/>
                     </div>
                 </div>
                 <div class="col-xs-4 form-group">
-                    <label class="col-xs-4 control-label">创建到模块:</label>
+                    <label class="col-xs-4 control-label">模块:</label>
                     <div class="col-xs-8">
                         <select ng-model="table.module" ng-options="module for module in modules"
                                 class="form-control"></select>
@@ -250,12 +250,12 @@
 </div>
 
 
-<script src="/quick_admin/Public/Build/jquery.1.11.2.js"></script>
-<script src="/quick_admin/Public/Build/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-<script src="/quick_admin/Public/Build/angular-1.3.0/angular.min.js"></script>
-<script src="/quick_admin/Public/Build/angular-1.3.0/angular-cookies.min.js"></script>
-<script src="/quick_admin/Public/Build/fun.js"></script>
-<script src="/quick_admin/Public/Build/index.js"></script>
+<script src="/quick/Public/Build/jquery.1.11.2.js"></script>
+<script src="/quick/Public/Build/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script src="/quick/Public/Build/angular-1.3.0/angular.min.js"></script>
+<script src="/quick/Public/Build/angular-1.3.0/angular-cookies.min.js"></script>
+<script src="/quick/Public/Build/fun.js"></script>
+<script src="/quick/Public/Build/index.js"></script>
 <script>
     var buildInfo = jQuery.parseJSON( '<?php echo ($buildInfo); ?>' );
     var saveUrl = '<?php echo U("Index/build");?>';
